@@ -57,7 +57,7 @@ export MAVEN_OPTS="-Xmx1024m ${MAVEN_JAVA_OPTS} -Duser.home=$BUILD_DIR -Dmaven.r
 mvnOpts="-B"
 mvnOpts="${mvnOpts}${MAVEN_SETTINGS_OPT:+ $MAVEN_SETTINGS_OPT}"
 mvnOpts="${mvnOpts} ${MAVEN_CUSTOM_OPTS:-"-DskipTests=true"}"
-mvnOpts="${mvnOpts} ${MAVEN_CUSTOM_GOALS:-"clean install"}"
+mvnOpts="${mvnOpts} ${MAVEN_CUSTOM_GOALS:-"clean generate-sources install"}"
 
 status "Executing: mvn ${mvnOpts}"
 $CACHE_DIR/.maven/bin/mvn ${mvnOpts} | indent
